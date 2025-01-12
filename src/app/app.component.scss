@@ -1,0 +1,68 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+// Variables
+$header-bg-color: #bb2929;
+$header-text-color: #ffffff;
+$header-height: 60px;
+$transition-duration: 0.3s;
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: $header-bg-color;
+  height: $header-height;
+  transition: all $transition-duration ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+  }
+
+  .header-title {
+    color: $header-text-color;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: $header-text-color;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color $transition-duration ease;
+
+      &:hover, &.active {
+        color: darken($header-text-color, 15%);
+      }
+    }
+  }
+
+  // Scroll effect
+  &.scrolled {
+    background-color: rgba($header-bg-color, 0.95);
+    height: $header-height - 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    .header-title {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// Add padding to the body to prevent content from being hidden under the fixed header
+body {
+  padding-top: $header-height;
+}
