@@ -18,14 +18,15 @@ import { DemoNgZorroAntdModule } from './DemoNgZorroAntdModule';
 import { SignupClientComponent } from './basic/components/signup-client/signup-client.component';
 import { RouterOutlet } from "@angular/router";
 import { SignupCompanyComponent } from './basic/components/signup-company/signup-company.component';
-import { HeaderComponent } from './header.component';
+
+import { CommonModule } from '@angular/common';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+
     LoginComponent,
     SignupComponent,
     SignupClientComponent,

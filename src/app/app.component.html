@@ -1,18 +1,19 @@
-<div ngIf="!isClientLoggedIn && !isCompanyLoggedIn">
-<header class="main-header" nz-row nzType="flex">
-  <div class="header-content">
-    <h2 class="header-title">Service Booking System</h2>
-    <nav class="nav-links">
+<div *ngIf="!isClientLoggedIn && !isCompanyLoggedIn">
+  <nz-header class="main-header" nz-row nzType="flex">
+    <div class="header-content">
+      <h2 class="header-title">Service Booking System</h2>
+    </div>
+    <div class="nav-links">
       <a nz-button nzType="link" routerLink="/home" routerLinkActive="active">Home</a>
       <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Register</a>
       <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
-    </nav>
-  </div>
-</header>
+    </div>
+
+  </nz-header>
 </div>
 
 <!-- Clinet Log In UI -->
-<div ngIf="isClientLoggedIn">
+<div *ngIf="isClientLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
     <div>
       <h2 style="color: white; padding-left: 19px;">Pet Service System</h2>
@@ -51,7 +52,7 @@
 
 <!-- Company Log In UI -->
 
-<div ngIf="isCompanyLoggedIn">
+<div *ngIf="isCompanyLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
     <div>
       <h2 style="color: white; padding-left: 19px;">Pet Service System</h2>
