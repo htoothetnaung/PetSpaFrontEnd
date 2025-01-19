@@ -1,0 +1,178 @@
+// Variables
+$primary-color: #1890ff;
+$primary-color-dark: darken($primary-color, 10%);
+$background-color: #f0f2f5;
+$text-color: #333;
+$error-color: #ff4d4f;
+$box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+$transition-duration: 0.3s;
+
+// Mixins for responsiveness
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 480px) { @content; }
+  } @else if $breakpoint == "medium" {
+    @media (max-width: 768px) { @content; }
+  }
+}
+
+.bg {
+  background-color: $background-color;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  @include respond-to(small) {
+    padding: 10px;
+  }
+}
+
+.parent {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  transition: transform $transition-duration ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  @include respond-to(small) {
+    padding: 30px;
+  }
+}
+
+.child {
+  .imgDiv {
+    text-align: center;
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 32px;
+      color: $primary-color;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color $transition-duration ease;
+
+      &:hover {
+        color: $primary-color-dark;
+      }
+
+      @include respond-to(small) {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.login-form {
+  .ant-form-item {
+    margin-bottom: 24px;
+
+    @include respond-to(small) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .ant-input-affix-wrapper {
+    padding: 4px 11px;
+    border-radius: 6px;
+    transition: all $transition-duration ease;
+
+    &:hover, &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+  }
+
+  .ant-input {
+    height: 40px;
+    font-size: 16px;
+
+    @include respond-to(small) {
+      height: 36px;
+      font-size: 14px;
+    }
+  }
+
+  .login-form-button {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all $transition-duration ease;
+
+    &:hover {
+      background-color: $primary-color-dark;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba($primary-color, 0.3);
+    }
+
+    @include respond-to(small) {
+      height: 40px;
+      font-size: 14px;
+    }
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: $primary-color;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color $transition-duration ease;
+
+    &:hover {
+      color: $primary-color-dark;
+      text-decoration: underline;
+    }
+
+    @include respond-to(small) {
+      font-size: 13px;
+    }
+  }
+}
+
+// NG-ZORRO specific styles
+:host ::ng-deep {
+  .ant-form-item-explain-error {
+    color: $error-color;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .ant-input-prefix {
+    color: rgba(0, 0, 0, 0.45);
+    transition: color $transition-duration ease;
+  }
+
+  .ant-input-affix-wrapper:hover .ant-input-prefix {
+    color: $primary-color;
+  }
+}
+
+// Animation for form appearance
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.parent {
+  animation: fadeInUp 0.6s ease-out;
+}

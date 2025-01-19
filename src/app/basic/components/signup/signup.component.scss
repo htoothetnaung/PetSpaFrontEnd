@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// Variables
+$primary-color: #3b82f6;
+$secondary-color: #e0e7ff;
+$text-color: #1f2937;
+$background-color: #f3f4f6;
+
+// Mixins
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: 2px solid $bg-color;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline; // Ensure buttons take full width and stack
+  text-align: center;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, $secondary-color, $background-color);
+  color: $text-color;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Container Styles
+.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 550px;
+  width: 90%;
+  margin: 300px auto;
+
+}
+
+// Section Styles
+.section {
+  text-align: center;
+}
+
+// Header Styles
+.header {
+  margin-bottom: 32px;
+
+  h1 {
+    font-size: 28px;
+    color: $text-color;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 18px;
+    color: lighten($text-color, 20%);
+  }
+}
+
+// Button Styles
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Adjust spacing between buttons
+}
+
+.button {
+  font-size: 20px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer ;
+
+  &-primary {
+    @include button-style($primary-color, #ffffff);
+  }
+
+  &-secondary {
+    @include button-style(#ffffff, $primary-color);
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: rgba($primary-color, 0.1);
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 480px) {
+  .container {
+    padding: 24px;
+  }
+
+  .header {
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}

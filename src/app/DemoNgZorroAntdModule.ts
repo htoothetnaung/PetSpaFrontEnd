@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { NzHeaderComponent } from 'ng-zorro-antd/layout';
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
@@ -71,6 +72,7 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
 
 @NgModule({
   exports: [
+
     NzAffixModule,
     NzAlertModule,
     NzAnchorModule,
@@ -95,6 +97,7 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
     NzEmptyModule,
     NzFormModule,
     NzGridModule,
+    NzPageHeaderModule,
     NzI18nModule,
     NzIconModule,
     NzImageModule,
