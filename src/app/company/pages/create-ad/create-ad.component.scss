@@ -1,0 +1,77 @@
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full page height */
+  background-color: aliceblue;
+}
+
+.child {
+  width: 50%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imgDiv h2 {
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.profile-badge input[type="file"] {
+  margin-top: 10px;
+}
+
+textarea[nz-input],
+input[nz-input] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[nz-button] {
+  display: block;
+  width: 100%;
+  align-items: center;
+  padding: 0px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[nz-button]:hover {
+  background-color: #333;
+}
+
+textarea {
+  resize: none;
+}
+
+
+.profile-badge img {
+  max-width: 150px; /* Set maximum width */
+  max-height: 150px; /* Set maximum height */
+  border-radius: 10%; /* Make it circular if needed */
+  object-fit: cover; /* Ensure the image scales properly */
+  margin-bottom: 10px; /* Add some space below the image */
+}

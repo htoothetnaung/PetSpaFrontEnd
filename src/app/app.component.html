@@ -1,18 +1,19 @@
-<div ngIf="!isClientLoggedIn && !isCompanyLoggedIn">
-<header class="main-header" nz-row nzType="flex">
-  <div class="header-content">
-    <h2 class="header-title">Service Booking System</h2>
-    <nav class="nav-links">
+<div *ngIf="!isClientLoggedIn && !isCompanyLoggedIn">
+  <nz-header class="main-header" nz-row nzType="flex">
+    <div class="header-content">
+      <h2 class="header-title">Service Booking System</h2>
+    </div>
+    <div class="nav-links">
       <a nz-button nzType="link" routerLink="/home" routerLinkActive="active">Home</a>
       <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Register</a>
       <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
-    </nav>
-  </div>
-</header>
+    </div>
+
+  </nz-header>
 </div>
 
 <!-- Clinet Log In UI -->
-<div ngIf="isClientLoggedIn">
+<div *ngIf="isClientLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
     <div>
       <h2 style="color: white; padding-left: 19px;">Pet Service System</h2>
@@ -24,34 +25,34 @@
       <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
     </div>
   </nz-header>
+  <!--
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Dashboard</a>
 
-  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
-    <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
-        <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
 
-      </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Bookings</a>
 
-      <li nz-menu-item>
-        <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Bookings</a>
+        </li>
 
-      </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
 
-      <li nz-menu-item>
-        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
-
-      </li>
+        </li>
 
 
 
-    </ul>
+      </ul>
 
-  </nz-sider>
+    </nz-sider> -->
 </div>
 
 <!-- Company Log In UI -->
 
-<div ngIf="isCompanyLoggedIn">
+<div *ngIf="isCompanyLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
     <div>
       <h2 style="color: white; padding-left: 19px;">Pet Service System</h2>
@@ -65,31 +66,31 @@
     </div>
   </nz-header>
 
-  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
-    <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
-        <a nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Dashboard</a>
+    <!-- <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+        <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+          <li nz-menu-item>
+            <a nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Dashboard</a>
 
-      </li>
+          </li>
 
-      <li nz-menu-item>
-        <a nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Service</a>
+          <li nz-menu-item>
+            <a nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Service</a>
 
-      </li>
+          </li>
 
-      <li nz-menu-item>
-        <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Services</a>
+          <li nz-menu-item>
+            <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Services</a>
 
-      </li>
+          </li>
 
-      <li nz-menu-item>
-        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+          <li nz-menu-item>
+            <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
 
-      </li>
+          </li>
 
-    </ul>
+        </ul>
 
-  </nz-sider>
+      </nz-sider> -->
 </div>
 
 <router-outlet></router-outlet>
