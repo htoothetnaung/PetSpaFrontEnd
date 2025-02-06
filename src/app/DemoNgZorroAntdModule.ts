@@ -8,7 +8,7 @@ import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
-import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+// import { NzBreadcrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCalendarModule } from 'ng-zorro-antd/calendar';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -72,7 +72,6 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
 
 @NgModule({
   exports: [
-
     NzAffixModule,
     NzAlertModule,
     NzAnchorModule,
@@ -81,10 +80,7 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
     NzBackTopModule,
     NzBadgeModule,
     NzButtonModule,
-    NzBreadCrumbModule,
     NzCalendarModule,
-    NzCardModule,
-    NzCarouselModule,
     NzCascaderModule,
     NzCheckboxModule,
     NzCollapseModule,
@@ -97,7 +93,7 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
     NzEmptyModule,
     NzFormModule,
     NzGridModule,
-    NzPageHeaderModule,
+    NzPageHeaderModule,  // Keep only one reference
     NzI18nModule,
     NzIconModule,
     NzImageModule,
@@ -111,7 +107,6 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
     NzModalModule,
     NzNoAnimationModule,
     NzNotificationModule,
-    NzPageHeaderModule,
     NzPaginationModule,
     NzPopconfirmModule,
     NzPopoverModule,
@@ -144,5 +139,4 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
     NzPipesModule,
   ]
 })
-
 export class DemoNgZorroAntdModule { }

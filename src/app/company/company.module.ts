@@ -17,6 +17,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { AllAdsComponent } from './pages/all-ads/all-ads.component';
 import { UpdateAdComponent } from './pages/update-ad/update-ad.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { UpdateAdComponent } from './pages/update-ad/update-ad.component';
     NzLayoutModule,
     NzFormModule,
     NzInputModule,
+
+    NzTableModule,
 
 
     NzButtonModule,

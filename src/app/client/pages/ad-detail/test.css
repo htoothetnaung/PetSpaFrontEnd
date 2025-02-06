@@ -1,0 +1,73 @@
+.bg {
+  background-color: #f8f8f8;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between cards */
+  max-width: 1200px; /* Limit the container width */
+  margin: 0 auto; /* Center the container */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.ad-details-container,
+.book-service {
+  flex: 1; /* Make both cards take equal width */
+  min-width: 300px; /* Ensure cards don't get too small */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ad-details-container {
+  max-width: 60%; /* Ad details section can take more space */
+}
+
+.book-service {
+  max-width: 35%; /* Booking section takes less space */
+}
+
+.top-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.profile {
+  height: 130px;
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.service-name {
+  cursor: pointer;
+  color: #108ee9;
+  font-size: 1.5rem;
+}
+
+.price,
+.description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Adjust for responsiveness */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ad-details-container,
+  .book-service {
+    width: 100%; /* Make cards stack on smaller screens */
+    max-width: 100%; /* Remove max-width for full width */
+  }
+} 

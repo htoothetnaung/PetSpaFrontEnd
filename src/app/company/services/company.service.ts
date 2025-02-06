@@ -29,6 +29,8 @@ export class CompanyService {
 
   }
 
+ 
+
   getAdById(adId: any) : Observable<any> {
     const userId = UserStorageService.getUserId();
     return this.http.get(BASIC_URL + `api/company/ad/${adId}`, {
@@ -37,17 +39,24 @@ export class CompanyService {
 
   }
 
-  updateAd(adId:any, adDTO:any) : Observable<any> {
-
-    return this.http.put(BASIC_URL + `api/company/ad/${adId}`, adDTO, {
+  getAllAdBookings() : Observable<any> {
+    const companyId = UserStorageService.getUserId();
+    return this.http.get(BASIC_URL + `api/company/bookings/${companyId}`, {
       headers: this.createAuthorizationHeader()
     });
 
   }
 
-  deleteAd(adId:any) : Observable<any> {
+  changeBookingStatus(bookingId: number, status: String) : Observable<any> {
+    return this.http.get(BASIC_URL + `api/company/booking/${bookingId}/${status}`, {
+      headers: this.createAuthorizationHeader()
+    });
 
-    return this.http.delete(BASIC_URL + `api/company/ad/${adId}`, {
+  }
+
+  updateAd(adId:any, adDTO:any) : Observable<any> {
+   
+    return this.http.put(BASIC_URL + `api/company/ad/${adId}`, adDTO, {
       headers: this.createAuthorizationHeader()
     });
 
@@ -59,6 +68,12 @@ export class CompanyService {
       'Authorization',
       'Bearer ' + UserStorageService.getToken()
     )
+  }
+
+  deleteAd(adId: any){
+    return this.http.delete(BASIC_URL + `api/company/ad/${adId}`, {
+      headers: this.createAuthorizationHeader()
+    });
   }
 
 

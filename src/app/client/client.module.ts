@@ -7,12 +7,20 @@ import { ClientDashboardComponent } from './pages/client-dashboard/client-dashbo
 import { FormsModule } from '@angular/forms';
 import { DemoNgZorroAntdModule } from '../DemoNgZorroAntdModule';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
+import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
+import { ReviewComponent } from './pages/review/review.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+
 
 
 @NgModule({
   declarations: [
     ClientComponent,
-    ClientDashboardComponent
+    ClientDashboardComponent,
+    AdDetailComponent,
+    MyBookingsComponent,
+    ReviewComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DemoNgZorroAntdModule, 
     FormsModule,
     ReactiveFormsModule, 
+    NzCardModule
   ]
 })
 export class ClientModule { }
