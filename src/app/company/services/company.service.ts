@@ -2,8 +2,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserStorageService } from 'src/app/basic/service/storage/user-storage.service';
+import { CONFIG } from 'src/app/config';
 
-const BASIC_URL = 'http://localhost:8080/';
+// const BASIC_URL = 'http://localhost:8080/';
+const BASIC_URL = CONFIG.API_BASE_URL;
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +32,7 @@ export class CompanyService {
 
   }
 
- 
+
 
   getAdById(adId: any) : Observable<any> {
     const userId = UserStorageService.getUserId();
@@ -55,7 +58,7 @@ export class CompanyService {
   }
 
   updateAd(adId:any, adDTO:any) : Observable<any> {
-   
+
     return this.http.put(BASIC_URL + `api/company/ad/${adId}`, adDTO, {
       headers: this.createAuthorizationHeader()
     });

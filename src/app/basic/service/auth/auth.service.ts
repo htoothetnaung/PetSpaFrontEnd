@@ -2,9 +2,12 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, catchError, Observable, throwError } from 'rxjs';
 import { UserStorageService } from '../storage/user-storage.service';
+import { CONFIG } from 'src/app/config';
 
 
-const BASIC_URL = "http://localhost:8080/";
+// const BASIC_URL = "http://localhost:8080/";
+const BASIC_URL = CONFIG.API_BASE_URL;
+
 export const AUTH_HEADER = 'Authorization';
 
 @Injectable({
@@ -20,7 +23,7 @@ export class AuthService {
   registerClient(signupRequestDTO: any): Observable<any> {
     return this.http.post(BASIC_URL + 'client/sign-up', signupRequestDTO);
   }
- 
+
   registerCompany(signupRequestDTO: any): Observable<any> {
     return this.http.post(BASIC_URL + 'company/sign-up', signupRequestDTO);
   }
