@@ -21,60 +21,38 @@
         </div>
       </div>
     </div>
+
+    <!-- Book Service Card -->
     <div class="book-service">
-      <!-- Booking section content -->
-      <div>
-        <div nz-row>
-          <h2>Book Service</h2>
-
-        </div>
-
-        <form nz-form [formGroup]="validateForm">
-          <div nz-row>
-            <div nz-col nzSpan="24">
-              <nz-form-item>
-                <nz-form-label [nzSpan]="24" nzFor="bookDate">Date of Booking</nz-form-label>
-                <nz-form-control [nzSpan]="24">
-                  <nz-date-picker formControlName="bookDate" name="bookDate" id="bookDate" nzPlaceHolder="Select date">
-
-                  </nz-date-picker>
-
-                </nz-form-control>
-              </nz-form-item>
-
-            </div>
-
-          </div>
-
-          <button nz-button [nzType]="'primary'" (click)="bookService()" [disabled]="validateForm.invalid">Book
-
-          </button>
-        </form>
+      <div nz-row>
+        <h2>Book Service</h2>
       </div>
 
+      <form nz-form [formGroup]="validateForm">
+        <div nz-row>
+          <div nz-col nzSpan="24">
+            <nz-form-item>
+              <nz-form-label [nzSpan]="24" nzFor="bookDate">Date of Booking</nz-form-label>
+              <nz-form-control [nzSpan]="24">
+                <nz-date-picker formControlName="bookDate" name="bookDate" id="bookDate"
+                  nzPlaceHolder="Select date"></nz-date-picker>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <button nz-button [nzType]="'primary'" (click)="bookService()" [disabled]="validateForm.invalid">Book</button>
+      </form>
     </div>
+
+    <!-- Reviews Section -->
     <div class="review-section">
-      <!-- Review section content -->
       <div class="row-card" *ngFor="let review of reviews">
-        <nz-card [nzBordered]="false" nzTitle="{{ review.userName}}">
-
-          <h3>
-            {{ review.clientName}}
-          </h3>
-          <p>
-            Review: <strong> {{ review.review}}</strong>
-          </p>
-
-          <p>
-            Review:
-            <strong><nz-rate disabled [ngModel]="review.rating"> </nz-rate></strong>
-          </p>
-
-          <p>
-            Posted On:
-            <strong>{{ review.reviewDate }}</strong>
-          </p>
-
+        <nz-card [nzBordered]="false" nzTitle="{{ review.userName }}">
+          <h3>{{ review.clientName }}</h3>
+          <p>Review: <strong>{{ review.review }}</strong></p>
+          <p>Rating: <strong><nz-rate disabled [ngModel]="review.rating"></nz-rate></strong></p>
+          <p>Posted On: <strong>{{ review.reviewDate }}</strong></p>
         </nz-card>
       </div>
     </div>
