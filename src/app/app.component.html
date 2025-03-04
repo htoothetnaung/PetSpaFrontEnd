@@ -1,96 +1,96 @@
 <div *ngIf="!isClientLoggedIn && !isCompanyLoggedIn">
-  <nz-header class="main-header" nz-row nzType="flex">
-    <div class="header-content">
-      <h2 class="header-title">Service Booking System</h2>
-    </div>
-    <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/home" routerLinkActive="active">Home</a>
-      <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Register</a>
-      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #2a3d66; padding: 20px;">
+    <div class="header-content" style="flex: 1; text-align: center;">
+      <h2 style="font-size: 2.5rem; color: white; font-weight: bold;">Pet Service Booking System</h2>
+      <p style="color: white; font-size: 1rem; max-width: 600px; margin: 10px auto;">
+        A one-stop solution for booking pet services with ease. Whether you're a pet owner looking to book services, or
+        a company offering them, our system connects you with the best.
+      </p>
     </div>
 
+    <div class="nav-links" style="display: flex; justify-content: flex-end; gap: 20px;">
+      <a nz-button nzType="link" routerLink="/home" routerLinkActive="active"
+        style="color: white; font-size: 1.2rem;">Home</a>
+      <a nz-button nzType="link" routerLink="/register" routerLinkActive="active"
+        style="color: white; font-size: 1.2rem;">Register</a>
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active"
+        style="color: white; font-size: 1.2rem;">Login</a>
+    </div>
   </nz-header>
+
+  <!-- Main Body Content -->
+  <section style="background-color: #f4f6f9; padding: 50px 0; text-align: center;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h3 style="font-size: 2.5rem; color: #2a3d66; font-weight: bold;">Welcome to Our Pet Service Booking System</h3>
+      <p
+        style="color: #333; font-size: 1.2rem; margin: 20px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
+        We provide an easy way for pet owners to book appointments for their furry friends and for businesses to manage
+        their services. Whether you're looking for grooming, walking, or vet services, we have you covered!
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+        <div
+          style="width: 300px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <h4 style="color: #2a3d66;">For Pet Owners</h4>
+          <p style="color: #333;">Easily find and book services for your pet, from grooming to veterinary care. Your
+            pet's well-being is our priority.</p>
+        </div>
+        <div
+          style="width: 300px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <h4 style="color: #2a3d66;">For Service Providers</h4>
+          <p style="color: #333;">List your services, manage bookings, and connect with pet owners looking for quality
+            care.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 2.5rem; color: #2a3d66; margin-top: 50px;">How It Works</h3>
+      <p style="color: #333; font-size: 1.1rem; margin: 20px auto; max-width: 800px;">
+        1. **Sign up or login** - Create an account as a pet owner or a service provider.
+        2. **Browse or post services** - Find the services you need or list your own.
+        3. **Book or accept bookings** - Schedule appointments and manage services with ease.
+      </p>
+    </div>
+  </section>
+
 </div>
 
-<!-- Clinet Log In UI -->
+<!-- Client Log In UI -->
 <div *ngIf="isClientLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
     <div>
       <h2 style="color: white; padding-left: 19px;">Pet Service System</h2>
     </div>
-
     <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Dashboard</a>
-      <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Bookings</a>
-      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+      <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active"
+        style="color: white;">Dashboard</a>
+      <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active"
+        style="color: white;">Bookings</a>
+      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active" style="color: white;">Logout</a>
     </div>
   </nz-header>
-  <!--
-    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
-      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
-        <li nz-menu-item>
-          <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Dashboard</a>
-
-        </li>
-
-        <li nz-menu-item>
-          <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Bookings</a>
-
-        </li>
-
-        <li nz-menu-item>
-          <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
-
-        </li>
-
-
-
-      </ul>
-
-    </nz-sider> -->
 </div>
 
 <!-- Company Log In UI -->
-
 <div *ngIf="isCompanyLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
     <div>
       <h2 style="color: white; padding-left: 19px;">Pet Service System</h2>
     </div>
-
     <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Dashboard</a>
-      <a nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Post Service</a>
-      <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Services</a>
-      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+      <a nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active"
+        style="color: white;">Dashboard</a>
+      <a nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active" style="color: white;">Post
+        Service</a>
+      <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active" style="color: white;">Services</a>
+      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active" style="color: white;">Logout</a>
     </div>
   </nz-header>
-
-    <!-- <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
-        <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
-          <li nz-menu-item>
-            <a nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Dashboard</a>
-
-          </li>
-
-          <li nz-menu-item>
-            <a nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Service</a>
-
-          </li>
-
-          <li nz-menu-item>
-            <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Services</a>
-
-          </li>
-
-          <li nz-menu-item>
-            <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
-
-          </li>
-
-        </ul>
-
-      </nz-sider> -->
 </div>
 
 <router-outlet></router-outlet>
+
+<!-- Footer Section -->
+<footer style="background-color: #2a3d66; padding: 20px 0; color: white; text-align: center;">
+  <p style="font-size: 1rem;">© 2025 Pet Service System. All Rights Reserved.</p>
+  <p style="font-size: 1rem;">Connecting pet owners with the best pet services. Your pet’s comfort, our priority.</p>
+</footer>
